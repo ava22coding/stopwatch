@@ -5,6 +5,7 @@ class Stopwatch extends Component {
         super(props)
         this.state={
             isLive: false,
+            // stop상태가false start상태가 true, 기본적으로 false로 설정
             curTime: 0,
             startTime: 0
         }
@@ -31,6 +32,9 @@ class Stopwatch extends Component {
         const t = Math.floor(delta/1000)
         const ss = t%60
         const m = Math.floor(t/60)
+        // floor()는 소수점 이하를 버림
+        // ceil()은 소수점 이하를 올림
+        // round()는 소수점 이하를 반올림
         const mm = m%60
         const hh = Math.floor(mm/60)
         const z = (num)=>{
